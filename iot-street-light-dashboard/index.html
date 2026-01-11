@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automatic Street Light IoT Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<header>
+    <h1>🌧️ Automatic Street Light IoT Dashboard</h1>
+    <p>Light & Rain Based Automation</p>
+</header>
+
+<!-- Status section -->
+<section class="status-cards">
+    <div class="status-card">
+        <h3>🌙 Light Condition</h3>
+        <p id="lightCondition">-</p>
+    </div>
+
+    <div class="status-card">
+        <h3>🌧️ Rain Status</h3>
+        <p id="rainCondition">-</p>
+    </div>
+
+    <div class="status-card">
+        <h3>💡 Street Light</h3>
+        <p id="streetLightCondition">-</p>
+    </div>
+
+    <div class="status-card">
+        <h3>🔆 Ambient LDR</h3>
+        <p id="ambientLdrValue">-</p>
+    </div>
+</section>
+
+<!-- Charts section -->
+<section class="grid">
+    <div class="card">
+        <h3>LDR Value</h3>
+        <canvas id="ldrChart"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Rain Sensor</h3>
+        <canvas id="rainChart"></canvas>
+    </div>
+
+    <div class="card full">
+        <h3>Ambient LDR vs LED LDR</h3>
+        <canvas id="ldrVsLedChart"></canvas>
+    </div>
+</section>
+
+<!-- Maintenance section -->
+<section class="maintenance">
+    <h2>🛠️ Maintenance</h2>
+
+    <!-- Full LDR Detection Card on top -->
+    <div class="status-card full-card">
+        <h3>💡 LDR (LED Fault Detection)</h3>
+        <p id="ledLdrValue">-</p>
+    </div>
+
+    <!-- LED Status Row below -->
+    <div class="led-row">
+        <div class="status-card">
+            <h3>🚨 LED 1 Status</h3>
+            <p class="led-status">NORMAL ✅</p>
+        </div>
+
+        <div class="status-card">
+            <h3>🚨 LED 2 Status</h3>
+            <p class="led-status">NORMAL ✅</p>
+        </div>
+
+        <div class="status-card">
+            <h3>🚨 LED 3 Status</h3>
+            <p id="ledFaultStatus">-</p>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

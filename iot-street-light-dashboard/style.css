@@ -1,0 +1,171 @@
+/* ===== Base ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f0f0f5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(90deg, #6a0dad, #ff7f50);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 0.2rem 0 0 0;
+    font-size: 1rem;
+}
+
+/* ===== Status Cards ===== */
+.status-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+.status-card {
+    background: white;
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    width: 160px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.status-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.status-card h3 {
+    margin-bottom: 0.5rem;
+    color: #6a0dad; /* Purple title */
+    font-size: 1rem;
+}
+
+.status-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ===== Grid for charts ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.2rem;
+    margin: 1rem;
+}
+
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card.full {
+    grid-column: span 2;
+}
+
+/* ===== Maintenance Section ===== */
+.maintenance {
+    margin: 2rem 1rem 1rem 1rem;
+}
+
+.maintenance h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ff7f50; /* Orange heading */
+    text-align: center;
+}
+
+/* LED row inside maintenance */
+.maintenance .led-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.maintenance .led-row .status-card {
+    flex: 1 1 200px;
+    min-height: 140px;
+    font-size: 1.3em;
+    padding: 25px;
+    border: 2px solid #6a0dad;
+    border-left: 8px solid #ff7f50;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.maintenance .led-row .status-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
+
+/* Full card for LDR detection - BIG RECTANGLE, FULL WIDTH */
+.maintenance .full-card {
+    width: 100%;           /* full row width */
+    min-height: 80px;     /* taller rectangle */
+    font-size: 1.8em;      /* bigger text */
+    padding: 40px;         /* more padding inside */
+    box-shadow: 0 8px 35px rgba(0,0,0,0.35); /* stronger shadow */
+    border: 2px solid #6a0dad;
+    border-left: 14px solid #ff7f50;         /* orange accent */
+    border-radius: 18px;                     
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;    /* space before LED row */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.maintenance .full-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+
+
+/* Static NORMAL status styling */
+.static-status {
+    color: black;
+    font-size: 2.5rem;  
+    font-weight: bold;
+}
+
+/* ===== Chart Canvas ===== */
+canvas {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+/* All LED status cards use the same look */
+.led-row .status-card p,
+.led-row .status-card .led-status {
+    font-size: 1.5rem;         /* same as dynamic LED 3 */
+    font-weight: bold;
+    color: black;              /* green for normal, can change to black if needed */
+    margin: 0;
+}
